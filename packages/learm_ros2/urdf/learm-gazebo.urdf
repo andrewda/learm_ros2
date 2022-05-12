@@ -1,0 +1,419 @@
+<?xml version="1.0" ?>
+<robot name="LeArm">
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/base.stl" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/base.stl" />
+            </geometry>
+        </collision>
+        
+<inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+
+    </link>
+    <link name="shoulder_link">
+        <visual>
+            <geometry>
+                <mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/shoulder.stl" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/shoulder.stl" />
+            </geometry>
+        </collision>
+        
+<inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+
+    </link>
+    <link name="humerus_link">
+        <visual>
+            <geometry>
+                <mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/humerus.stl" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/humerus.stl" />
+            </geometry>
+        </collision>
+        
+<inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+
+    </link>
+    <link name="forearm_link">
+        <visual>
+            <geometry>
+                <mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/forearm.stl" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/forearm.stl" />
+            </geometry>
+        </collision>
+        
+<inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+
+    </link>
+    <link name="wrist_link">
+        <visual>
+            <geometry>
+                <mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/wrist.stl" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/wrist.stl" />
+            </geometry>
+        </collision>
+        
+<inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+
+    </link>
+    <link name="hand_link">
+        <visual>
+            <geometry>
+                <mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/hand.stl" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/hand.stl" />
+            </geometry>
+        </collision>
+        
+<inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+
+    </link>
+    <link name="grip_left_link">
+        <visual>
+            <geometry>
+                <mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/carpal-left.stl" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/carpal-left.stl" />
+            </geometry>
+        </collision>
+        
+<inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+
+    </link>
+    <link name="grip_right_link">
+        <visual>
+            <geometry>
+                <mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/carpal-right.stl" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/carpal-right.stl" />
+            </geometry>
+        </collision>
+        
+<inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+
+    </link>
+    <link name="tendon_left_link">
+        <visual>
+            <geometry>
+                <mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/tendon.stl" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/tendon.stl" />
+            </geometry>
+        </collision>
+        
+<inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+
+    </link>
+    <link name="tendon_right_link">
+        <visual>
+            <geometry>
+                <mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/tendon.stl" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/tendon.stl" />
+            </geometry>
+        </collision>
+        
+<inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+
+    </link>
+    <link name="finger_left_link">
+        <visual>
+            <geometry>
+                <mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/finger.stl" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/finger.stl" />
+            </geometry>
+        </collision>
+        
+<inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+
+    </link>
+    <link name="finger_right_link">
+        <visual>
+            <origin rpy="0 0 3.14159" />
+            <geometry>
+                <mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/finger.stl" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin rpy="0 0 3.14159" />
+            <geometry>
+                <mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/finger.stl" />
+            </geometry>
+        </collision>
+        
+<inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+
+    </link>
+    <joint name="shoulder_pan" type="revolute">
+        <parent link="base_link" />
+        <child link="shoulder_link" />
+        <origin xyz="0 0 0.059" />
+        <axis xyz="0 0 1" />
+        <limit lower="-1.57" upper="1.57" effort="1000" velocity="0.5" />
+    </joint>
+    <joint name="shoulder_lift" type="revolute">
+        <parent link="shoulder_link" />
+        <child link="humerus_link" />
+        <origin xyz="-0.010 0 0.028" />
+        <axis xyz="0 1 0" />
+        <limit lower="-1.57" upper="1.57" effort="1000" velocity="0.5" />
+    </joint>
+    <joint name="elbow" type="revolute">
+        <parent link="humerus_link" />
+        <child link="forearm_link" />
+        <origin xyz="0 0 0.105" />
+        <axis xyz="0 -1 0" />
+        <limit lower="-1.57" upper="1.57" effort="1000" velocity="0.5" />
+    </joint>
+    <joint name="wrist_flex" type="revolute">
+        <parent link="forearm_link" />
+        <child link="wrist_link" />
+        <origin xyz="0 0 0.090" />
+        <axis xyz="0 -1 0" />
+        <limit lower="-1.57" upper="1.57" effort="1000" velocity="0.5" />
+    </joint>
+    <joint name="wrist_roll" type="revolute">
+        <parent link="wrist_link" />
+        <child link="hand_link" />
+        <origin xyz="0 0 0.060" />
+        <axis xyz="0 0 1" />
+        <limit lower="-1.57" upper="1.57" effort="1000" velocity="0.5" />
+    </joint>
+    <joint name="grip_left" type="revolute">
+        <parent link="hand_link" />
+        <child link="grip_left_link" />
+        <origin xyz="0 +0.015 0.030" rpy="-1.57 0 0" />
+        <axis xyz="-1 0 0" />
+        <limit lower="-1.57" upper="0" effort="1000" velocity="0.5" />
+    </joint>
+    <joint name="grip_right" type="revolute">
+        <parent link="hand_link" />
+        <child link="grip_right_link" />
+        <origin xyz="0 -0.015 0.030" rpy="1.57 0 0" />
+        <axis xyz="-1 0 0" />
+        <limit lower="0" upper="1.57" effort="1000" velocity="0.5" />
+        <mimic joint="grip_left" multiplier="-1" />
+    </joint>
+    <joint name="tendon_left" type="revolute">
+        <parent link="hand_link" />
+        <child link="tendon_left_link" />
+        <origin xyz="0 +0.005 0.050" rpy="-1.57 0 0" />
+        <axis xyz="-1 0 0" />
+        <limit lower="-1.57" upper="0" effort="1000" velocity="0.5" />
+        <mimic joint="grip_left" />
+    </joint>
+    <joint name="tendon_right" type="revolute">
+        <parent link="hand_link" />
+        <child link="tendon_right_link" />
+        <origin xyz="0 -0.005 0.050" rpy="1.57 0 0" />
+        <axis xyz="-1 0 0" />
+        <limit lower="0" upper="1.57" effort="1000" velocity="0.5" />
+        <mimic joint="grip_left" multiplier="-1" />
+    </joint>
+    <joint name="finger_left" type="revolute">
+        <parent link="grip_left_link" />
+        <child link="finger_left_link" />
+        <origin xyz="0 0 0.030" rpy="1.57 0 0" />
+        <axis xyz="-1 0 0" />
+        <limit lower="-1.57" upper="0" effort="1000" velocity="0.5" />
+        <mimic joint="grip_left" multiplier="-1" />
+    </joint>
+    <joint name="finger_right" type="revolute">
+        <parent link="grip_right_link" />
+        <child link="finger_right_link" />
+        <origin xyz="0 0 0.030" rpy="-1.57 0 0" />
+        <axis xyz="-1 0 0" />
+        <limit lower="0" upper="1.57" effort="1000" velocity="0.5" />
+        <mimic joint="grip_left" />
+    </joint>
+    
+<transmission name="trans_shoulder_pan">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="shoulder_pan">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="shoulder_pan_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_shoulder_lift">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="shoulder_lift">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="shoulder_lift_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_elbow">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="elbow">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="elbow_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_wrist_flex">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="wrist_flex">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="wrist_flex_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_wrist_roll">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="wrist_roll">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="wrist_roll_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_grip_left">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="grip_left">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="grip_left_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_grip_right">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="grip_right">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="grip_right_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_tendon_left">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="tendon_left">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="tendon_left_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_tendon_right">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="tendon_right">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="tendon_right_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_finger_left">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="finger_left">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="finger_left_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_finger_right">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="finger_right">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="finger_right_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/</robotNamespace>
+        </plugin>
+    </gazebo>
+</robot>

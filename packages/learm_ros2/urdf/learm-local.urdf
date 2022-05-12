@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<robot name="LeArm">
+	<link name="base_link">
+		<visual>
+			<geometry>
+				<mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/base.stl"/>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/base.stl"/>
+			</geometry>
+		</collision>
+	</link>
+	<link name="shoulder_link">
+		<visual>
+			<geometry>
+				<mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/shoulder.stl"/>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/shoulder.stl"/>
+			</geometry>
+		</collision>
+	</link>
+	<link name="humerus_link">
+		<visual>
+			<geometry>
+				<mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/humerus.stl"/>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/humerus.stl"/>
+			</geometry>
+		</collision>
+	</link>
+	<link name="forearm_link">
+		<visual>
+			<geometry>
+				<mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/forearm.stl"/>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/forearm.stl"/>
+			</geometry>
+		</collision>
+	</link>
+	<link name="wrist_link">
+		<visual>
+			<geometry>
+				<mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/wrist.stl"/>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/wrist.stl"/>
+			</geometry>
+		</collision>
+	</link>
+	<link name="hand_link">
+		<visual>
+			<geometry>
+				<mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/hand.stl"/>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/hand.stl"/>
+			</geometry>
+		</collision>
+	</link>
+	<link name="grip_left_link">
+		<visual>
+			<geometry>
+				<mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/carpal-left.stl"/>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/carpal-left.stl"/>
+			</geometry>
+		</collision>
+	</link>
+	<link name="grip_right_link">
+		<visual>
+			<geometry>
+				<mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/carpal-right.stl"/>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/carpal-right.stl"/>
+			</geometry>
+		</collision>
+	</link>
+	<link name="tendon_left_link">
+		<visual>
+			<geometry>
+				<mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/tendon.stl"/>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/tendon.stl"/>
+			</geometry>
+		</collision>
+	</link>
+	<link name="tendon_right_link">
+		<visual>
+			<geometry>
+				<mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/tendon.stl"/>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/tendon.stl"/>
+			</geometry>
+		</collision>
+	</link>
+	<link name="finger_left_link">
+		<visual>
+			<geometry>
+				<mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/finger.stl"/>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/finger.stl"/>
+			</geometry>
+		</collision>
+	</link>
+	<link name="finger_right_link">
+		<visual>
+			<origin rpy="0 0 3.14159"/>
+			<geometry>
+				<mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/finger.stl"/>
+			</geometry>
+		</visual>
+		<collision>
+			<origin rpy="0 0 3.14159"/>
+			<geometry>
+				<mesh filename="file:///home/andrewda/dev_ws/src/learm_ros2/meshes/finger.stl"/>
+			</geometry>
+		</collision>
+	</link>
+
+	<joint name="shoulder_pan" type="revolute">
+		<parent link="base_link"/>
+		<child link="shoulder_link"/>
+		<origin xyz="0 0 0.059"/>
+		<axis xyz="0 0 1"/>
+		<limit lower="-1.57" upper="1.57" effort="1000" velocity="0.5"/>
+	</joint>
+	<joint name="shoulder_lift" type="revolute">
+		<parent link="shoulder_link"/>
+		<child link="humerus_link"/>
+		<origin xyz="-0.010 0 0.028"/>
+		<axis xyz="0 1 0"/>
+		<limit lower="-1.57" upper="1.57" effort="1000" velocity="0.5"/>
+	</joint>
+	<joint name="elbow" type="revolute">
+		<parent link="humerus_link"/>
+		<child link="forearm_link"/>
+		<origin xyz="0 0 0.105"/>
+		<axis xyz="0 -1 0"/>
+		<limit lower="-1.57" upper="1.57" effort="1000" velocity="0.5"/>
+	</joint>
+	<joint name="wrist_flex" type="revolute">
+		<parent link="forearm_link"/>
+		<child link="wrist_link"/>
+		<origin xyz="0 0 0.090"/>
+		<axis xyz="0 -1 0"/>
+		<limit lower="-1.57" upper="1.57" effort="1000" velocity="0.5"/>
+	</joint>
+	<joint name="wrist_roll" type="revolute">
+		<parent link="wrist_link"/>
+		<child link="hand_link"/>
+		<origin xyz="0 0 0.060"/>
+		<axis xyz="0 0 1"/>
+		<limit lower="-1.57" upper="1.57" effort="1000" velocity="0.5"/>
+	</joint>
+	<joint name="grip_left" type="revolute">
+		<parent link="hand_link"/>
+		<child link="grip_left_link"/>
+		<origin xyz="0 +0.015 0.030" rpy="-1.57 0 0"/>
+		<axis xyz="-1 0 0"/>
+		<limit lower="-1.57" upper="0" effort="1000" velocity="0.5"/>
+	</joint>
+	<joint name="grip_right" type="revolute">
+		<parent link="hand_link"/>
+		<child link="grip_right_link"/>
+		<origin xyz="0 -0.015 0.030" rpy="1.57 0 0"/>
+		<axis xyz="-1 0 0"/>
+		<limit lower="0" upper="1.57" effort="1000" velocity="0.5"/>
+		<mimic joint="grip_left" multiplier="-1"/>
+	</joint>
+	<joint name="tendon_left" type="revolute">
+		<parent link="hand_link"/>
+		<child link="tendon_left_link"/>
+		<origin xyz="0 +0.005 0.050" rpy="-1.57 0 0"/>
+		<axis xyz="-1 0 0"/>
+		<limit lower="-1.57" upper="0" effort="1000" velocity="0.5"/>
+		<mimic joint="grip_left"/>
+	</joint>
+	<joint name="tendon_right" type="revolute">
+		<parent link="hand_link"/>
+		<child link="tendon_right_link"/>
+		<origin xyz="0 -0.005 0.050" rpy="1.57 0 0"/>
+		<axis xyz="-1 0 0"/>
+		<limit lower="0" upper="1.57" effort="1000" velocity="0.5"/>
+		<mimic joint="grip_left" multiplier="-1"/>
+	</joint>
+	<joint name="finger_left" type="revolute">
+		<parent link="grip_left_link"/>
+		<child link="finger_left_link"/>
+		<origin xyz="0 0 0.030" rpy="1.57 0 0"/>
+		<axis xyz="-1 0 0"/>
+		<limit lower="-1.57" upper="0" effort="1000" velocity="0.5"/>
+		<mimic joint="grip_left" multiplier="-1"/>
+	</joint>
+	<joint name="finger_right" type="revolute">
+		<parent link="grip_right_link"/>
+		<child link="finger_right_link"/>
+		<origin xyz="0 0 0.030" rpy="-1.57 0 0"/>
+		<axis xyz="-1 0 0"/>
+		<limit lower="0" upper="1.57" effort="1000" velocity="0.5"/>
+		<mimic joint="grip_left"/>
+	</joint>
+</robot>

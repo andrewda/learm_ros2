@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: learm_ros2
+    relative_path: urdf/learm-local.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/LeArm.srdf
+  CONFIG:
+    author_name: Andrew Dassonville
+    author_email: dassonville.andrew@gmail.com
+    generated_timestamp: 1651195087

@@ -1,0 +1,12 @@
+controller_list:
+  - name: arm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - shoulder_pan
+      - shoulder_lift
+      - elbow
+      - wrist_flex
+      - wrist_roll
+      - grip_left
